@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 
 import AnalysedGame from "shared/types/game/AnalysedGame";
+import { getColourPlayed } from "shared/types/game/Game";
+import PieceColour from "shared/constants/PieceColour";
 import { GameSelectorButton, GameSource } from "@/components/chess/GameSelector/GameSource";
 import useGameSelector, { SelectedGame } from "@/hooks/useGameSelector";
 import useAnalysisGameStore from "@analysis/stores/AnalysisGameStore";
@@ -35,7 +37,10 @@ function useImportGame() {
         setGameAnalysisOpen
     } = useAnalysisGameStore();
 
-    const { setCurrentStateTreeNode } = useAnalysisBoardStore();
+    const {
+        setCurrentStateTreeNode,
+        setBoardFlipped
+    } = useAnalysisBoardStore();
 
     function convertSelectedGame(selectedGame: SelectedGame) {
         if (typeof selectedGame == "string") {
@@ -93,6 +98,13 @@ function useImportGame() {
             const latestGame = gamesResponse.games?.at(0);
 
             if (!latestGame) throw new Error(t(messages.noGameSelected));
+
+            // Flip the board to the searched user's perspective
+            const usersColour = getColourPlayed(
+                latestGame, savedCurrentFieldInput
+            );
+
+            setBoardFlipped(usersColour == PieceColour.BLACK);
 
             importedGame = latestGame;
         }
