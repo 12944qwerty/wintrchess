@@ -1,13 +1,8 @@
 import express from "express";
 import cluster from "cluster";
 import os from "os";
-import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
-import { toNodeHandler } from "better-auth/node";
 
-import connectDatabase from "@/database/connect";
-import hostnameWhitelist from "@/lib/security/whitelist";
-import getAuth from "@/lib/auth";
 import mainRouter from "./routes";
 
 dotenv.config();
@@ -25,12 +20,7 @@ async function main() {
         return;
     }
 
-    await connectDatabase();
-
     const app = express();
-
-    app.use(cookieParser());
-    app.use(hostnameWhitelist);
 
     // Static assets
     app.use("/",
@@ -39,7 +29,6 @@ async function main() {
     );
 
     // Normal endpoints
-    app.all("/auth/account/*", toNodeHandler(getAuth()));
     app.use("/", mainRouter);
 
     // Start listening for requests

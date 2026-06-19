@@ -3,7 +3,6 @@ import { StatusCodes } from "http-status-codes";
 
 import { findNodeRecursively } from "shared/types/game/position/StateTreeNode";
 import AnalysisStatus from "@analysis/constants/AnalysisStatus";
-import { useAltcha } from "@/apps/features/analysis/hooks/useAltcha";
 import useSettingsStore from "@/stores/SettingsStore";
 import useAnalysisGameStore from "@analysis/stores/AnalysisGameStore";
 import useAnalysisBoardStore from "@analysis/stores/AnalysisBoardStore";
@@ -30,8 +29,6 @@ function useAnalyseGame(
         state => state.setAnalysisStatus
     );
 
-    const executeCaptcha = useAltcha();
-
     return async () => {
         const analyseResult = await analyseStateTree(analysisGame.stateTree, {
             includeBrilliant: settings.classifications.included.brilliant,
@@ -39,10 +36,7 @@ function useAnalyseGame(
             includeTheory: settings.classifications.included.theory
         });
 
-        // For any errors, display message or reset CAPTCHA
-        if (analyseResult.status == StatusCodes.UNAUTHORIZED) {
-            return executeCaptcha();
-        } else if (analyseResult.status != StatusCodes.OK) {
+        if (analyseResult.status != StatusCodes.OK) {
             return onAnalysisError?.(
                 t("progressReporter.reportFailed")
             );

@@ -2,37 +2,23 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Tooltip } from "react-tooltip";
 
-import { useAuthedProfile } from "@/hooks/api/useProfile";
 import Typography from "@/components/Typography";
 import Button from "@/components/common/Button";
 import BlurBackground from "@/components/layout/BlurBackground";
 import Sidebar from "@/components/layout/sidebar/Sidebar";
-import authClient from "@/lib/auth";
 
 import HoverDropdown from "./HoverDropdown";
 import * as styles from "./NavigationBar.module.css";
 
 import iconInterfaceMenu from "@assets/img/interface/menu.svg";
 import iconIconsAnalysis from "@assets/img/icons/analysis.png";
-import iconIconsArchive from "@assets/img/icons/archive.png";
-import iconIconsNews from "@assets/img/icons/news.png";
 import iconKofi from "@assets/img/kofi.svg";
-import iconInterfaceSettings from "@assets/img/interface/settings.svg";
-import iconInterfaceSignin from "@assets/img/interface/sign_in.svg";
-import iconInterfaceAccount from "@assets/img/interface/account.svg";
 import iconIconsSettings from "@assets/img/icons/settings.png";
 
 function NavigationBar() {
-    const { t } = useTranslation("common"); 
-
-    const { profile, status } = useAuthedProfile();
+    const { t } = useTranslation("common");
 
     const [ sidebarOpen, setSidebarOpen ] = useState(false);
-
-    async function signOut() {
-        await authClient.signOut();
-        location.href = "/signin";
-    }
 
     return <div className={styles.wrapper}>
         <div className={styles.section}>
@@ -57,20 +43,6 @@ function NavigationBar() {
                 >
                     {t("sidebar.analysis")}
                 </HoverDropdown>
-
-                <HoverDropdown
-                    icon={iconIconsArchive}
-                    url="/archive"
-                >
-                    {t("sidebar.archive")}
-                </HoverDropdown>
-
-                <HoverDropdown
-                    icon={iconIconsNews}
-                    url="/news"
-                >
-                    {t("sidebar.news")}
-                </HoverDropdown>
             </div>
         </div>
 
@@ -89,63 +61,13 @@ function NavigationBar() {
                 delayShow={500}
             />
 
-            {status == "pending" && <span>
-                {t("loading")}
-            </span>}
-
-            {status == "success" && <HoverDropdown
-                dropdownClassName={styles.profileMenu}
-                menuPosition="right"
-                openStrategy="click"
-                options={[
-                    // {
-                    //     icon: iconInterfaceAccount,
-                    //     label: t("navigationBar.profileMenu.profile"),
-                    //     url: `/profile/${profile.username}`
-                    // },
-                    {
-                        icon: iconInterfaceSettings,
-                        label: t("settings"),
-                        url: "/settings"
-                    },
-                    {
-                        icon: iconInterfaceSignin,
-                        label: t("navigationBar.profileMenu.signOut"),
-                        onClick: signOut
-                    }
-                ]}
-            >
-                <span className={styles.profileUsername}>
-                    {profile.username}
-                </span>
-
-                <img
-                    className={styles.profileIcon}
-                    src={iconInterfaceAccount}
+            <a href="/settings">
+                <Button
+                    className={styles.settings}
+                    icon={iconIconsSettings}
+                    iconSize="28px"
                 />
-
-                {/* <div className={styles.profileImage} /> */}
-            </HoverDropdown>}
-
-            {status == "error" && <>
-                <a href="/signin">
-                    <Button
-                        className={styles.signIn}
-                        icon={iconInterfaceSignin}
-                        iconSize="28px"
-                    >
-                        {t("navigationBar.signIn")}
-                    </Button>
-                </a>
-
-                <a href="/settings">
-                    <Button
-                        className={styles.settings}
-                        icon={iconIconsSettings}
-                        iconSize="28px"
-                    />
-                </a>
-            </>}
+            </a>
         </div>
 
         {sidebarOpen && <BlurBackground

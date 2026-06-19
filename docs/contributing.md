@@ -10,7 +10,6 @@ I think I've left the project in an *okay...* state, but there are still a lot o
 
 - Algorithm that estimates a player's performance rating "Elo" in a game.
 - A better accuracy algorithm; I still receive a lot of feedback saying it's too high.
-- The news article editor in the internal dashboard kind of sucks. The system for adding images is super duct tape.
 - Some actual piece themes for the settings page, since we only have the default one right now.
 - Performance metrics (accuracies etc.) for each stage of the game; opening, middlegame, endgame...
 - Ability to explore a Chess masters database when analysing opening moves.
@@ -44,7 +43,7 @@ import { Chess } from "chess.js";
 
 // Then imports from shared, and elsewhere in the same package
 import { PieceColour } from "shared/constants/PieceColour";
-import { archiveGame } from "@/lib/gameArchive";
+import displayToast from "@/lib/toast";
 
 // Then props for component & CSS modules
 import AwesomeThingProps from "./AwesomeThingProps";

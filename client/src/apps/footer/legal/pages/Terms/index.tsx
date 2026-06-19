@@ -91,7 +91,7 @@ function Terms() {
                     </li>
                     <li>
                         2.8 Attempt to defraud us or other users, especially to gain access to sensitive
-                        information, like user passwords
+                        information
                     </li>
                     <li>
                         2.9 Attempt to disparage or defame, in our opinion, us or the Services
@@ -130,53 +130,20 @@ function Terms() {
             </span>
 
             <h2 style={{ margin: 0 }}>
-                4. Account Registration
+                4. User Contributed Content
             </h2>
 
             <span>
-                4.1 If you would like, you can open an account on the Website to gain access to particular
-                services. By creating an account, you confirm automatically that the details you have
-                provided are correct, up-to-date and complete. You also confirm that you will update
-                such information as necessary. You will be responsible for all use of your account,
-                including but not limited to keeping your password confidential.
+                4.1 You can upload content ("Content") to the Services by analysing a Chess game, or
+                by using other available tools. By uploading Content to the Website, you confirm
+                automatically that you have the necessary rights over such Content, and that in no way
+                does it infringe any third-party rights. If you believe that content uploaded to the
+                Website has copied your work in a way that constitutes copyright infringement, please
+                contact us immediately.
             </span>
 
             <span>
-                4.2 We reserve the right to change the username or display name of any account opened with
-                the Website, for any reason or no reason, including but not limited to a breach of these
-                Terms. It is at our sole discretion whether usernames or display names are offensive,
-                inappropriate or otherwise objectionable.
-            </span>
-
-            <span>
-                4.3 We also reserve the right to terminate any account on the Website without notice and for
-                any reason or no reason, including but not limited to a breach of these Terms. Similarly,
-                we reserve the right to deny anyone access to the Services (for example, through blocking
-                IP Addresses) without notice and for any reason or no reason.
-            </span>
-
-            <span>
-                4.4 As explained by <b>Section 2.2</b>, you may not use any part of the account system on the
-                Website (or the rest of the Services) to engage in spam, especially through the registration
-                of large numbers of accounts that you will not use, for the sole purpose of negatively
-                impacting our infrastructure or ability to provide the Services.
-            </span>
-
-            <h2 style={{ margin: 0 }}>
-                5. User Contributed Content
-            </h2>
-
-            <span>
-                5.1 You can upload content ("Content") to the Services by analysing a Chess game, storing
-                games in your Game Archive, or by using other available tools. By uploading Content to
-                the Website, you confirm automatically that you have the necessary rights over such
-                Content, and that in no way does it infringe any third-party rights. If you believe that
-                content uploaded to the Website has copied your work in a way that constitutes copyright
-                infringement, please contact us immediately.
-            </span>
-
-            <span>
-                5.2 By uploading Content to the Website, you automatically grant us (and confirm that you
+                4.2 By uploading Content to the Website, you automatically grant us (and confirm that you
                 have the necessary rights to grant us) an unrestricted, irrevocable, transferable,
                 royalty-free, worldwide right and license to host, use, copy, reproduce, disclose, sell,
                 store, and distribute such Content. The Content can be used by us for any purpose, including
@@ -185,21 +152,21 @@ function Terms() {
             </span>
 
             <span>
-                5.3 You agree to retain full ownership over Content you upload to the Website. You are solely
+                4.3 You agree to retain full ownership over Content you upload to the Website. You are solely
                 responsible for statements or representations made by such Content, and you agree to exonerate
                 us from any and all responsibility and or liability over such content, and to refrain from
                 any legal action in regard to such Content.
             </span>
 
             <span>
-                5.4 We reserve the right to delete, restrict access to partially or fully, or disable any
+                4.4 We reserve the right to delete, restrict access to partially or fully, or disable any
                 uploaded Content without notice, for any reason or no reason, including but not limited to
                 a breach of these Terms. In order to do this, we exercise the rights granted to us by the
-                license (as explained in <b>Section 5.2</b>) over user contributed Content.
+                license (as explained in <b>Section 4.2</b>) over user contributed Content.
             </span>
 
             <h2 style={{ margin: 0 }}>
-                6. Third-party Websites and Content
+                5. Third-party Websites and Content
             </h2>
 
             <span>
@@ -211,16 +178,15 @@ function Terms() {
                 therein imply any approval or endorsement of such Third-Party Content. If you
                 decide to access any third-party Services, you do so entirely at your own risk,
                 and without the government of these Terms. Therefore, we are held blameless to any
-                harm that may be caused to you in relation to accessing Third-Party Content. 
+                harm that may be caused to you in relation to accessing Third-Party Content.
             </span>
 
             <span>
-                For most users, this relates to advertisements on the Website or sign-in features
-                provided by Google.
+                For most users, this relates to game data fetched from Chess.com or Lichess.
             </span>
 
             <h2 style={{ margin: 0 }}>
-                7. Privacy
+                6. Privacy
             </h2>
 
             <span>
@@ -233,7 +199,7 @@ function Terms() {
             </span>
 
             <h2 style={{ margin: 0 }}>
-                8. Limitation of Liability
+                7. Limitation of Liability
             </h2>
 
             <span>
@@ -249,11 +215,11 @@ function Terms() {
 
             <span>
                 Regardless of the form of action, and for any cause whatsoever, our liability
-                to you will at all times be limited to the amount paid, if any, by you to us. 
+                to you will at all times be limited to the amount paid, if any, by you to us.
             </span>
 
             <h2 style={{ margin: 0 }}>
-                9. Governing Law
+                8. Governing Law
             </h2>
 
             <span>
@@ -263,7 +229,7 @@ function Terms() {
             </span>
 
             <span>
-                Last revision to this Terms of Service: 31st July 2025
+                Last revision to this Terms of Service: 18th June 2026
             </span>
         </div>
     </div>;

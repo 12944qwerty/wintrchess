@@ -2,10 +2,7 @@
     "title": "Game Analysis",
     "optionsToolbar": {
         "flipBoard": "Flip Board",
-        "share": "Share Game",
-        "save": "Save to Archive",
-        "noArchiveStorage": "You can only store up to 50 games in your Game Archive.",
-        "gameArchived": "Game successfully archived!"
+        "share": "Share Game"
     },
     "settings": {
         "title": "Analysis Settings",
@@ -98,13 +95,8 @@
     },
     "progressReporter": {
         "evaluating": "Evaluating...",
-        "awaitingCaptcha": "Solving the CAPTCHA...",
         "classifying": "Classifying...",
         "evaluatingTooltip": "If this takes a while, you can try lowering the engine depth in the settings.",
-        "captchaTooltip": "This might take a few seconds...",
-        "captchaVerifyFailed": "Could not verify the CAPTCHA; try refreshing the page.",
-        "captchaLoadFailed": "Could not load the CAPTCHA. Your browser is likely outdated.",
-        "captchaUnknownError": "Unknown CAPTCHA error; try refreshing the page.",
         "reportFailed": "Unknown error while generating the game report; try refreshing the page.",
         "completeNotification": "Analysis Complete"
     },

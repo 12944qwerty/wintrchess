@@ -1,7 +1,6 @@
 import React from "react";
 
 import Separator from "@/components/common/Separator";
-import { manageDataConsent } from "@/lib/consent";
 
 import * as styles from "../../index.module.css";
 
@@ -71,11 +70,7 @@ function PrivacyPolicy() {
                 2.3 We use local storage to save information across different sessions, including:
 
                 <ul>
-                    <li>
-                        The settings you chose on the settings page, excluding account settings,
-                        the information for which is retained on the server.
-                    </li>
-
+                    <li>The settings you chose on the settings page.</li>
                     <li>The preferred language that you selected.</li>
                 </ul>
 
@@ -88,19 +83,17 @@ function PrivacyPolicy() {
             </h3>
 
             <span>
-                3.1 We use cookies to store a session token string. This keeps you from
-                needing to solve a CAPTCHA to access Chess game analysis and move
-                classifications, but doesn't contain any personally identifying information.
-                It is highly recommended to keep cookies on; you may otherwise lose
-                functionality. The CAPTCHA is proof-of-work based; it in itself does not
-                collect any personal data.
+                3.1 We do not use cookies or accounts to access Chess game analysis and move
+                classifications; the Service is available anonymously. We do not store the
+                PGN (Portable Game Notation) file you submit, or the resulting analysis, on
+                our servers - it is processed in memory to generate your game report and
+                discarded immediately once the response is returned to you.
             </span>
 
             <span>
-                3.2 When you analyse a game on the Website, we collect any information that you
-                have explicitly provided to us. This includes the PGN (Portable Game Notation)
-                file that represents the game that you have chosen to analyse. Depending on the
-                PGN file provided, this may include:
+                3.2 When you analyse a game on the Website, we momentarily process any
+                information that you have explicitly provided to us, in order to generate
+                your analysis. Depending on the PGN file provided, this may include:
 
                 <ul>
                     <li>Player names and ratings</li>
@@ -108,10 +101,8 @@ function PrivacyPolicy() {
                     <li>Time control, variant, results and other game metadata</li>
                 </ul>
 
-                3.3 We collect PGN files in order to process your analysis request.
-                We may sometimes retain PGN files provided for game analysis for longer periods
-                of time in order to improve the Website and aid the development of new services.
-                If PGN files are retained for this reason, they will be anonymised.
+                3.3 None of this information is retained once your analysis request has been
+                processed.
             </span>
 
             <span>
@@ -148,111 +139,8 @@ function PrivacyPolicy() {
                 </ul>
             </span>
 
-            <h3 style={{ margin: 0 }}>
-                4. Game Archive
-            </h3>
-
-            <span>
-                4.1 If you have an account on the Website, you can save Chess games that you
-                analyse to the{" "}
-
-                <a href="/archive">Game Archive</a>
-
-                . If you do this, we collect information about the Chess game as well as
-                any information about the analysis you have conducted, in order to provide
-                the archive service. This includes:
-
-                <ul>
-                    <li>
-                        The PGN (Portable Game Notation) file that represents the game,
-                        including any metadata therein as defined by{" "}
-
-                        <b>Section 3.2</b>
-                    </li>
-
-                    <li>Evaluations and moves provided by a Chess engine</li>
-                    <li>Move classifications that we have provided during analysis</li>
-                </ul>
-
-                This information is retained until you delete the game from your archive,
-                or delete your account.
-            </span>
-
-            <h3 style={{ margin: 0 }}>
-                5. Accounts
-            </h3>
-
-            <span>
-                You, while on the Website, have the option to make an account. You do not have
-                to do this, although some services we provide cannot be used without one.
-            </span>
-
-            <span>
-                When you sign up for an account, we collect the information that you explicitly
-                provide to us in order to provide the Website and its services. This includes:
-
-                <ul>
-                    <li>Your Email Address</li>
-                    <li>The username you provide</li>
-                    <li>Your display name, if you sign in with Google</li>
-                    <li>Your profile picture, if you sign in with Google</li>
-                    <li>Your password in hashed form, if you sign up with credentials</li>
-                </ul>
-
-                This information is retained for the duration that you keep your account open on
-                the Website.
-            </span>
-
             <h2 style={{ margin: 0 }}>
-                6. Data we provide to third parties
-            </h2>
-
-            <span>
-                6.1 We use Google AdSense on the Website to serve advertisements. Google LLC,
-                as a third-party vendor, uses cookies to serve personalised advertising.
-                You are prompted to provide explicit consent to this information being
-                collected when you first visit the Website, or when you click
-
-                <a className={styles.link} onClick={manageDataConsent}>
-                    Privacy Settings
-                </a>
-
-                {" "}which is always located in the footer of the page.
-
-                Through the same prompt, you also have the right to withdraw your consent to
-                this collection at any time. You may also read the{" "}
-
-                <a href="https://policies.google.com/privacy">
-                    Google LLC Privacy Policy
-                </a>
-
-                , should you want to read more about what information is collected in regard to
-                serving advertisements on the Website.
-            </span>
-
-            <span>
-                6.2 We use Google Analytics to collect information about how visitors
-                use the Website, including pages visited, time spent, and interactions. 
-                This includes IP addresses, browser and device information, and 
-                approximate location. Cookies are also used for this and for purposes
-                of security. We use this data to understand how WintrChess is used,
-                improve user experience, and analyse traffic patterns. Analytics
-                data is processed by Google LLC; they may use this data in accordance
-                with their own privacy policy. You can always opt out of this if you
-                would like by installing Google's official{" "}
-
-                <a href={
-                    "https://chromewebstore.google.com/detail/google-analytics"
-                    + "-opt-out/fllaojicojecljbmefodhfapmkghcbnh?hl=en-GB"
-                }>
-                    "Google Analytics Opt-out Add-on" browser extension
-                </a>
-
-                .
-            </span>
-
-            <h2 style={{ margin: 0 }}>
-                7. Children's Privacy
+                4. Children's Privacy
             </h2>
 
             <span>
@@ -261,7 +149,7 @@ function PrivacyPolicy() {
             </span>
 
             <h2 style={{ margin: 0 }}>
-                8. Your Data Rights
+                5. Your Data Rights
             </h2>
 
             <span>
@@ -275,9 +163,6 @@ function PrivacyPolicy() {
 
                 <li>
                     Request for the personal information we hold about you to be erased.
-                    You can do this by deleting your account through the{" "}
-
-                    <a href="/settings/account">settings page.</a>
                 </li>
 
                 <li>
@@ -287,7 +172,7 @@ function PrivacyPolicy() {
             </ul>
 
             <h2 style={{ margin: 0 }}>
-                9. Revisions
+                6. Revisions
             </h2>
 
             <span>
@@ -295,11 +180,11 @@ function PrivacyPolicy() {
             </span>
 
             <span>
-                Last revision to this privacy policy: 23rd December 2025
+                Last revision to this privacy policy: 18th June 2026
             </span>
 
             <h2 style={{ margin: 0 }}>
-                10. Contact Us
+                7. Contact Us
             </h2>
 
             <span>

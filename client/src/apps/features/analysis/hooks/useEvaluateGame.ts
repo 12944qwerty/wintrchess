@@ -43,7 +43,7 @@ function useEvaluateGame() {
 
         evaluator.evaluate()
             .then(() => setAnalysisStatus(
-                AnalysisStatus.AWAITING_CAPTCHA
+                AnalysisStatus.CLASSIFYING
             ))
             .catch(err => {
                 if (err == "abort") return;

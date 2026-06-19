@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import AnalysisStatus from "@analysis/constants/AnalysisStatus";
 import useAnalysisProgressStore from "@analysis/stores/AnalysisProgressStore";
-import useAnalysisSessionStore from "@analysis/stores/AnalysisSessionStore";
 import ProgressReporter from "@/components/common/ProgressReporter";
 
 import useAnalyseGame from "@analysis/hooks/useAnalyseGame";
@@ -11,7 +10,7 @@ import useAnalyseGame from "@analysis/hooks/useAnalyseGame";
 function getStatusTitle(status: AnalysisStatus) {
     const statusTitles: Record<string, string | undefined> = {
         [AnalysisStatus.EVALUATING]: "progressReporter.evaluating",
-        [AnalysisStatus.AWAITING_CAPTCHA]: "progressReporter.awaitingCaptcha"
+        [AnalysisStatus.CLASSIFYING]: "progressReporter.classifying"
     };
 
     return statusTitles[status];
@@ -27,16 +26,11 @@ function AnalysisProgress() {
         setAnalysisError
     } = useAnalysisProgressStore();
 
-    const {
-        analysisSessionToken,
-        analysisCaptchaError
-    } = useAnalysisSessionStore();
-
-    const analyseGame = useAnalyseGame();
+    const analyseGame = useAnalyseGame(setAnalysisError);
 
     // Tab notification for complete analysis
     useEffect(() => {
-        if (analysisStatus != AnalysisStatus.AWAITING_CAPTCHA) return;
+        if (analysisStatus != AnalysisStatus.CLASSIFYING) return;
 
         if (!document.hasFocus()) {
             document.title = t("progressReporter.completeNotification");
@@ -52,18 +46,10 @@ function AnalysisProgress() {
 
     // Attempt to classify generated evaluations
     useEffect(() => {
-        if (analysisStatus != AnalysisStatus.AWAITING_CAPTCHA) return;
-
-        if (analysisCaptchaError) {
-            return setAnalysisError(analysisCaptchaError);
-        }
+        if (analysisStatus != AnalysisStatus.CLASSIFYING) return;
 
         analyseGame();
-    }, [
-        analysisSessionToken,
-        analysisStatus,
-        analysisCaptchaError
-    ]);
+    }, [analysisStatus]);
 
     const statusTitle = getStatusTitle(analysisStatus);
 
@@ -74,7 +60,7 @@ function AnalysisProgress() {
         title={statusTitle ? t(statusTitle) : undefined}
         tooltip={analysisStatus == AnalysisStatus.EVALUATING
             ? t("progressReporter.evaluatingTooltip")
-            : t("progressReporter.captchaTooltip")
+            : undefined
         }
         error={analysisError}
     />;

@@ -8,14 +8,12 @@ import {
     stateTreeNodeSchema
 } from "shared/types/game/position/StateTreeNode";
 import { getGameAnalysis } from "shared/lib/reporter/report";
-import analysisAuthenticator from "@/lib/security/analysis";
 
 const path = "/analysis/analyse";
 
 const router = Router();
 
 router.use(path,
-    analysisAuthenticator,
     express.json({ limit: "1mb" })
 );
 

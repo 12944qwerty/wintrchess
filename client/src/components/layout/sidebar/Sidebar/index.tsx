@@ -10,8 +10,6 @@ import * as styles from "./Sidebar.module.css";
 
 import iconInterfaceClose from "@assets/img/interface/close.svg";
 import iconIconsAnalysis from "@assets/img/icons/analysis.png";
-import iconIconsArchive from "@assets/img/icons/archive.png";
-import iconIconsNews from "@assets/img/icons/news.png";
 import iconIconsSettings from "@assets/img/icons/settings.png";
 
 function Sidebar({ style, onClose }: SidebarProps) {
@@ -39,28 +37,11 @@ function Sidebar({ style, onClose }: SidebarProps) {
         <div className={styles.tabs}>
             <div className={styles.tabSection}>
                 <SidebarTab
-                    url="/analysis" 
+                    url="/analysis"
                     icon={iconIconsAnalysis}
                     style={{ width: "100%" }}
                 >
                     {t("sidebar.analysis")}
-                </SidebarTab>
-
-                <SidebarTab
-                    url="/archive" 
-                    icon={iconIconsArchive} 
-                    iconSize="20px"
-                    style={{ width: "100%" }}
-                >
-                    {t("sidebar.archive")}
-                </SidebarTab>
-
-                <SidebarTab
-                    url="/news"
-                    icon={iconIconsNews}
-                    style={{ width: "100%" }}
-                >
-                    {t("sidebar.news")}
                 </SidebarTab>
             </div>
 

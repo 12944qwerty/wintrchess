@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import Typography from "@/components/Typography";
 import Dialog from "@/components/common/Dialog";
 import LoadingPlaceholder from "../LoadingPlaceholder";
-import { manageDataConsent } from "@/lib/consent";
 
 import FooterProps from "./FooterProps";
 import * as styles from "./Footer.module.css";
@@ -53,10 +52,6 @@ function Footer({ className, style }: FooterProps) {
                 <a href="/help">
                     {t("title", { ns: "helpCenter" })}
                 </a>
-
-                <span className={styles.link} onClick={manageDataConsent}>
-                    {t("footer.privacySettings")}
-                </span>
 
                 <span
                     className={styles.link}
